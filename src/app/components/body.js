@@ -7,7 +7,7 @@ import Page2 from './pages/page2'
 const Body = () => (
     <div className='body'>
       <Switch>
-        <Route exact path='/' component={Home}/>
+        <Route exact path='/' component={() => <Home homepagedata={{'input1':"", 'input2':"", 'computedval':0}} />}/>
         <Route path='/page1' component={Page1}/>
         <Route path='/page2' component={Page2}/>
       </Switch>
