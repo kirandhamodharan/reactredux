@@ -5,7 +5,7 @@
   "scripts": {
     "build": "webpack --config ./webpack-config/prod.js --progress --colors",
     "dev": "webpack-dev-server --config ./webpack-config/dev.js --progress --color",
-    "start": "serve ./build"
+    "start": "node ./src/server/index.js"
   },
   "keywords": [
     "react",
@@ -13,17 +13,21 @@
     "Router",
     "react-router-dom",
     "client side routing",
-    "react-redux", "redux"
+    "react-redux",
+    "redux"
   ],
   "author": "Kiran Dhamodharan <kirandhamodharan@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.19.2",
+    "express": "^4.17.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.1",
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
-    "redux-logger": "^3.0.6"
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "@babel/core": "7.11.0",
@@ -36,7 +40,6 @@
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.3.0",
     "sass-loader": "^9.0.3",
-    "serve": "^11.3.2",
     "style-loader": "^1.2.1",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",

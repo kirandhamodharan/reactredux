@@ -37,7 +37,7 @@ module.exports = {
     },
     output: {
         filename: 'app.js',
-        path: path.resolve(__dirname, PROJ_DIR, 'build')
+        path: path.resolve(__dirname, PROJ_DIR, 'build', 'public')
     },
     plugins: [
         new webpack.ProgressPlugin(),

@@ -15,7 +15,7 @@ class Page2 extends Component {
 
             <h1>Page 2</h1>
 
-            <p style={{'fontSize':'70px'}}>&#128519;</p><br />
+            <p style={{'fontSize':'70px'}}>&#128519;</p>
             <h3>Home page Data</h3>
             <div>Input 1: {this.props.homepagedata.input1}</div>
             <div>Input 2: {this.props.homepagedata.input2}</div>

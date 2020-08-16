@@ -3,14 +3,15 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { p1DataChanged } from '../../util/redux/actions';
 
-
 class Page1 extends Component {
-
   constructor(props) {
     super(props);
+    //props.btnTxt = "Send Data to store";
+
     this.state = {
       input1: "",
       input2: ""
+      
     };
     this.handleDataEntry = this.handleDataEntry.bind(this);
     this.sendDataToStore = this.sendDataToStore.bind(this);
@@ -39,15 +40,19 @@ class Page1 extends Component {
           <h1>Page 1</h1>
 
           <p style={{'fontSize':'70px'}}>&#128513;</p><br />
-          Data1: <input name="input1" onChange={this.handleDataEntry} value={this.props.input1}/><br /><br />
-          Data2: <input name="input2" onChange={this.handleDataEntry} value={this.props.input2}/>
+          Data1: <input name="input1" onChange={this.handleDataEntry} /><br /><br />
+          Data2: <input name="input2" onChange={this.handleDataEntry} />
           <br /><br /><br /><br />
           <div>
-            <button onClick={this.sendDataToStore}>Send data to store</button>
+            <button disabled={this.props.proccessingInd == "Y"} onClick={this.sendDataToStore}>{ (this.props.proccessingInd == "Y")? "Processing...":"OK" }</button>
           </div>
       </div>
     )
   }
 }
 
-export default connect(null, {p1DataChanged})(Page1)
+const mapStateToProps = (state, ownProps) => {
+  return (state.page1data)
+}
+
+export default connect(mapStateToProps, {p1DataChanged})(Page1)

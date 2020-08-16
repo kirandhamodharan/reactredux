@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { homePageInput1Changed, homePageInput2Changed } from '../../util/redux/actions';
 
-
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -12,9 +11,7 @@ class Home extends Component {
 
   handleInputChange(event) {
     const target = event.target;
-    this.setState({
-      [target.name]: target.value
-    });
+
     if (target.name == "input1") this.props.homePageInput1Changed(target.value);
     if (target.name == "input2") this.props.homePageInput2Changed(target.value);
   }
@@ -41,7 +38,8 @@ class Home extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  return state.homepagedata;
+  //console.log(state.homepagedata);
+  return (state.homepagedata)
 }
 
 export default connect(mapStateToProps, {homePageInput1Changed, homePageInput2Changed})(Home)
