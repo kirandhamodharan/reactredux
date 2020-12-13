@@ -20,7 +20,7 @@ app.post('/process', function (req, res, next) {
   res.json(result)
 })
 
-app.use(express.static('public'))
+app.use(express.static('./build/public'))
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
